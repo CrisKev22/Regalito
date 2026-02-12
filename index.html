@@ -1,47 +1,330 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores para ti 🌼</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #ffcc00;
-            font-size: 2.5em;
-        }
-        p {
-            color: #333;
-            font-size: 1.2em;
-        }
-        .flower {
-            font-size: 5em;
-            margin: 20px;
-        }
-        .message {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz 14 de Febrero Chinita :3💖</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+    overflow-x: hidden;
+}
+
+/* FONDO CORAZONES SUAVES */
+.background-hearts span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    color: rgba(255,255,255,0.6);
+    animation: rise 14s linear infinite;
+}
+
+.background-hearts span:nth-child(1){left:10%;}
+.background-hearts span:nth-child(2){left:30%;font-size:30px;}
+.background-hearts span:nth-child(3){left:50%;}
+.background-hearts span:nth-child(4){left:70%;font-size:28px;}
+.background-hearts span:nth-child(5){left:90%;}
+
+@keyframes rise {
+    0% {transform: translateY(0); opacity:0;}
+    10% {opacity:1;}
+    100% {transform: translateY(-120vh); opacity:0;}
+}
+
+/* TARJETA */
+.card {
+    background: rgba(255,255,255,0.95);
+    padding: 40px 30px;
+    border-radius: 25px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(30px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+h1 {
+    color: #c9184a;
+    font-size: 2.6em;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #6d6875;
+}
+
+.main-heart {
+    font-size: 4em;
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* PLAYLIST */
+.playlist {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.song {
+    background: #fff0f3;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.song button {
+    background: #c9184a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.song p {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* GALERÍA */
+.gallery img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+}
+
+/* BOTÓN CORAZÓN */
+.love-button-container {
+    margin-top: 35px;
+}
+
+.love-button {
+    background: linear-gradient(135deg, #ff4d6d, #c9184a);
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 2.5em;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+.love-button:active {
+    transform: scale(0.9);
+}
+
+.love-text {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #c9184a;
+}
+
+/* CORAZONES QUE CAEN */
+.falling-heart {
+    position: fixed;
+    top: -30px;
+    animation: fall linear forwards;
+    z-index: 10000;
+}
+
+@keyframes fall {
+    0% {transform: translateY(0) rotate(0deg); opacity:1;}
+    100% {transform: translateY(110vh) rotate(360deg); opacity:0;}
+}
+
+/* RESPONSIVE */
+@media (max-width:600px){
+    h1 {font-size:2em;}
+    .gallery img {width:90%;}
+    .playlist {text-align:center;}
+    .song {text-align:left;}
+}
+</style>
 </head>
+
 <body>
-    <div class="message">
-        <h1>Para tí mi chinita bonita :3 💛</h1>
-        <div class="flower">🌼</div>
-        <p>
-            Aunque no pude encontrarte flores amarillas hoy, quiero que sepas que siempre pienso en ti.<br>
-            Amor perdoname por no darte las flores amarillas, la verdad no sabia y se me paso y mi reacción fue muy tarde cuando fui al centro a buscar no pude encontrar :C.<br>
-            Estas flores son para recordarte lo especial que eres para mí.<br> 🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼💛💛💛💛💛💛💛💛💛💛💛💛💛<br>
-            Te quiero amorcitoooooooooooo :3
-        </p>
+
+<div class="background-hearts">
+    <span>❤️</span><span>💕</span><span>💖</span><span>❤️</span><span>💕</span>
+</div>
+
+<div class="card">
+    <h1>Feliz 14 de Febrero, mi amorcito 💖</h1>
+    <div class="subtitle">
+        Se que ahorita estamos lejitos uno del otro pero despues dormiremos todos los dias juntos :3
     </div>
+
+    <div class="main-heart">💘</div>
+
+    <p>
+        Aunque los kilometros nos separen<br>
+        tenemos un lazo que nos une :3<br><br>
+        Este pequeño espacio es solo para ti,
+        para recordarte cuánto te quiero.
+    </p>
+
+    <!-- PLAYLIST -->
+    <div class="playlist">
+        <h2>🎶 Canciones para ti</h2>
+
+        <div class="song">
+            <button onclick="toggleSong(0)">▶ / ⏸</button>
+            <audio src="music/song1.mp3"></audio>
+            <p>La primera vez que escuche esta canción la letra me impacto bastante, porque en lo primero que pense fue en ti :3 ❤️ 
+                Y basicamente toda la letra hace juego, llegaste en un momento crítico para mi vida y llegaste para guiar y alumbrar mi vida
+                Realmente me gusta mucho como tu compañia y tu presencia puede hacer demasiado, me das paz, calma y tranquilidad, cuando veo tus 
+                ojos puedo ver un futuro a tu lado y lo mejor de todo la satisfacción de encontrar la felicidad que tanto buscaba te agradezco por
+                llegar a mi vida y darle un propósito, un sentido y una guía, gracias por todo, por tus besitos, por tus abrazos por tu forma de ser
+                Y gracias por ilusionarme :3, me llenas de felicidad amorcito :3 
+            </p>
+        </div>
+
+        <div class="song">
+            <button onclick="toggleSong(1)">▶ / ⏸</button>
+            <audio src="music/song2.mp3"></audio>
+            <p>Hoy desperte con ganas de besarte hahaha practicamente es como despierto todos los dias, se que hemos pasado por muchas hasta ahora 
+                creo que ninguno de los 2 pensaba en algun momento en tener una relación a distancia pero creo que encontramos a la persona indicada
+                debemos hacer todo lo posible porque suceda, aun recuerdo el dia que nos despedimos :'3 con el ultimo abrazo, y dentro de mi mente saber
+                que teniamos que esperar mucho tiempo para poder volver a abrazarnos y saber cuanto vas a extrañar a la otra persona, hoy es 14 de febrero amor, 
+                el 14 pasado no te compre flores :C perdoname eso amorcito hoy te compre flores :3 cuando despiertes encontraras las flores y son para ti :3
+                Nunca en mi vida he pasado el 14 de febrero con una persona amorcito, y para ser la segunda vez que lo pasare con alguien quiero dar lo mejor de mi
+                Te quiero muchooooo amorcito, el tercer 14 de febrero creo que aun la pasaremos separados :'3 pero despues va podremos estar juntos por siempre
+                y te podre recompensar con muuuuuchos besitos :3 Te quiero mucho amor ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️  no lo olvides, eres muy importante para mi
+                Te quiero mi chinita hermosa ❤️ 
+            </p>
+        </div>
+
+        <div class="song">
+            <button onclick="toggleSong(2)">▶ / ⏸</button>
+            <audio src="music/song3.mp3"></audio>
+            <p>Rie chinita :3, no es bonito contemplar a una persona y sin decir nada encontrar la paz en sus ojos?
+                Se que algun dia moriremos y nos falta toda una vida por disfrutar pero esta canción siempre me lleva al primer atardecer que vimos juntos
+                un instante de tiempo que desearia fuera infinito y me hace pensar en que aun nos faltan muchos atardeceres por ver, un atardecer como este 
+                los dos sentados cerca a la playa recostados en el hombro pensando en todo aquello que pasamos y que vimos para saber con seguridad que estas 
+                con la persona indicada ❤️ hoy quiero agradecerte por estar en mi vida amorcito, por haber llegado 1 dia y por permanecer ❤️ siempre miro hacia 
+                atras y veo que casi ya va a pasar 1 año, recuerdo el dia que escribi las cartas que te llevaste, es gracioso sabes, porque recuerdo que te fuiste 
+                en abril y dije bueno el tiempo pasara y llegara mi cumpleaños, despues vendra la octubre con la procesión y despues navidad y año nuevo y 
+                despues nuevamente 1 año mas y ya nos podremos volver a ver hahahaha suena facil pero ambos sabemos que no sido muy facil ❤️ te amo por quedarte
+                ❤️ se que cumpliremos la meta y al final estaremos juntitos y acurrucaditos :3 ❤️ y recordaremos esta historia tirados en la cama charlando y entre 
+                risas, te amo, te amare por siempre :3 sigamos en esta historia :3 ❤️ te agradezco mucho amorcito
+                Te quiero, te quiero, te quieroooooooooooooooooooooooooooooooooooooooooooo ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ 
+            </p>
+        </div>
+    </div>
+
+    <!-- GALERÍA -->
+    <div class="gallery">
+        <img src="images/foto1.jpg" onclick="openModal(this.src)">
+        <img src="images/foto2.jpg" onclick="openModal(this.src)">
+        <img src="images/foto3.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <!-- BOTÓN LLUVIA -->
+    <div class="love-button-container">
+        <button class="love-button" onclick="rainHearts()">❤️</button>
+        <div class="love-text">Tócalo 💕</div>
+    </div>
+
+    <div class="footer">
+        Con todo mi amor,<br>
+        Tu grillito enamorado 💌
+    </div>
+</div>
+
+<div class="modal" id="modal" onclick="closeModal()">
+    <img id="modalImg">
+</div>
+
+<script>
+const heartEmojis = ['❤️','💖','💕','💘','💝','💗'];
+
+function rainHearts(){
+    for(let i=0;i<30;i++){
+        createHeart();
+    }
+}
+
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.className = 'falling-heart';
+    heart.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+
+    heart.style.left = Math.random()*100 + 'vw';
+    heart.style.fontSize = (Math.random()*20 + 20) + 'px';
+    heart.style.animationDuration = (Math.random()*2 + 3) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),5000);
+}
+
+function toggleSong(index){
+    const audios = document.querySelectorAll('audio');
+    audios.forEach((a,i)=>{ if(i!==index) a.pause(); });
+    audios[index].paused ? audios[index].play() : audios[index].pause();
+}
+
+function openModal(src){
+    document.getElementById('modal').style.display='flex';
+    document.getElementById('modalImg').src=src;
+}
+
+function closeModal(){
+    document.getElementById('modal').style.display='none';
+}
+</script>
+
 </body>
 </html>
